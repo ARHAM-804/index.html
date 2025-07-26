@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Plate</title>
+  <link rel="stylesheet" href="./project.css">
+</head>
+<body>
+  <section class="hero">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="https://html.pixel-industry.com/royal-plate/img/logo.png" alt="Royal Plate Logo">
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <nav id="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Menu</a>
+        <a href="#">Reservations</a>
+        <a href="#">Catering</a>
+        <a href="#">Gallery</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h3>Discover</h3>
+      <h1>ROYAL PLATE</h1>
+      <div class="line"></div>
+      <p class="opening-hours">OPENING HOURS</p>
+      <p>Monday - Friday: 08:00 A.M - 11:00 P.M</p>
+      <p>Weekends: 08:00 A.M - 07:00 P.M</p>
+    </div>
+
+    <!-- Decorative Food Images -->
+    <div class="food-left">
+      <img src="https://html.pixel-industry.com/royal-plate/img/slider/slide01-01.png" alt="Food Left">
+    </div>
+    <div class="food-right">
+      <img src="https://html.pixel-industry.com/royal-plate/img/slider/slide01-06.png" alt="Food Right">
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+
+    // Parallax food movement
+    const hero    = document.querySelector('.hero');
+    const foodL   = document.querySelector('.food-left');
+    const foodR   = document.querySelector('.food-right');
+
+    function resetFood() {
+      foodL.style.transform = '';
+      foodR.style.transform = '';
+    }
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      const xPct = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5 .. +0.5
+      const yPct = (e.clientY - rect.top)  / rect.height - 0.5;
+
+      const maxX = 25; // px
+      const maxY = 12; // px
+
+      const moveXL =  xPct * maxX;
+      const moveYL =  yPct * maxY;
+
+      const moveXR = -xPct * maxX;
+      const moveYR = -yPct * maxY;
+
+      foodL.style.transform = `translate(${moveXL}px, ${moveYL}px)`;
+      foodR.style.transform = `translate(${moveXR}px, ${moveYR}px)`;
+    });
+
+    hero.addEventListener('mouseleave', resetFood);
+  </script>
+  <section class="section">
+    <div class="left-section">
+        <img src="https://html.pixel-industry.com/royal-plate/img/pics/spices-left.png" alt="">
+    </div>
+    <div class="center">
+        <h3>
+            <span class="our">Our Story
+
+            </span>
+
+        </h3>
+        <h3 class="love">
+            LOVE FOR FOOD
+        </h3>
+        <p class="Welcome">Welcome. This is Royal plate. Elegant & sophisticated restaurant template. Royal plate offers different home page layouts with smart and unique design, showcasing beautifully designed elements every restaurant website should have. Smooth animations, fast loading and engaging user experience are just some of the features this template offers.
+So, give it a try and dive into a world of royal restaurant websites.</p>
+    </div> 
+    <div class="light-section">
+        <img src="https://html.pixel-industry.com/royal-plate/img/pics/spices-right.png" alt="">
+    </div>
+  </section>
+  <section class="image-section">
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Background" class="bg-img">
+  <div class="image-overlay">
+    <span class="tagline">Exquisite Cuisine</span>
+    <h2>A FEAST FOR YOUR SENSES</h2>
+    <div class="divider">_____ x _____</div>
+  </div>
+</section>
+
+<section class="special-offers">
+  <div class="offers-left">
+    <!-- 4 images in grid -->
+    <img src="https://media.istockphoto.com/id/1542195131/photo/flat-lay-spread-turkish-breakfast.jpg?s=612x612&w=0&k=20&c=efOCurcA3oCgqwrIp2UYdrCVMmR6EUbQ5ZsNTsP8u0M=" alt="Food 1">
+    <img src="https://media.istockphoto.com/id/2148682705/photo/stuffed-omelette-with-tomatoes-and-spinach.jpg?s=612x612&w=0&k=20&c=AoDzT9rK2ymwMt9Fj5hY54ICQXd5fmWf0WU-Z2yx8rA=" alt="Food 2">
+    <img src="https://media.istockphoto.com/id/1772714735/photo/breakfast-coffee-table.jpg?s=612x612&w=0&k=20&c=UccpfNVfmz2r7xDYmtZbrPhK66RdACJjoPmkOYZt2NI=" alt="Food 3">
+    <img src="https://media.istockphoto.com/id/1402281575/photo/bowls-of-oatmeal-with-mixed-fruits-topping.jpg?s=612x612&w=0&k=20&c=nVI9J1KzBjT9kkihbobE6Gd3LqIHauFApOrdUCNj-rY=" alt="Food 4">
+  </div>
+
+  <div class="offers-right">
+    <h3 class="menu-title">From the menu</h3>
+    <h2 class="special-title">SPECIAL OFFERS</h2>
+
+    <div class="offer-item">
+      <img src="https://media.istockphoto.com/id/1845710643/photo/couple-drinking-coffee-together-over-breakfast-on-the-patio-of-a-bnb.jpg?s=612x612&w=0&k=20&c=Tw8CJCtg9hha8kilR2hAWoNtUk48TOcDtDaxCUQzcgU=" alt="Royal Breakfast">
+      <div class="offer-text">
+        <h4>ROYAL BREAKFAST</h4>
+        <p>Fried eggs, fried bacon toast, fresh tomato salad, cup of coffee or tea</p>
+      </div>
+      <span class="price">$15</span>
+    </div>
+
+    <div class="offer-item">
+      <img src="https://media.istockphoto.com/id/2156172800/photo/group-of-friends-having-dinner-on-the-patio-in-the-backyard.jpg?s=612x612&w=0&k=20&c=gYb02-Ow8H474HoLtICDVqGU0vckf5a3JW8VYRsvy-s=" alt="Royal Brunch">
+      <div class="offer-text">
+        <h4>ROYAL BRUNCH</h4>
+        <p>Warm chicken wings, portobello mushrooms, fresh mozzarella, coffee or tea</p>
+      </div>
+      <span class="price">$22</span>
+    </div>
+
+    <div class="offer-item">
+      <img src="https://media.istockphoto.com/id/2196163507/photo/elegant-dining-setup-with-candles-at-night-in-a-stylish-restaurant.jpg?s=612x612&w=0&k=20&c=1nA14KGZSY31fuBf3JDxI1lKPr7g49DKfsNOdfPgC0Y=" alt="Royal Dinner">
+      <div class="offer-text">
+        <h4>ROYAL DINNER</h4>
+        <p>Grilled beef steak, roasted red potato with rosemary, mushrooms sauce, wine</p>
+      </div>
+      <span class="price">$28</span>
+    </div>
+  </div>
+</section>
+
+<section class="slider">
+    <div class="slide">
+      <div class="slide-left">
+        <img src="https://media.istockphoto.com/id/2198000985/photo/youth-enjoy-tasty-street-food-while-laughing-and-socializing-in-the-vibrant-streets-of-sydney.jpg?s=612x612&w=0&k=20&c=x4ZPvrGX5qqRVzaqcLx3rJHtnGIZl8WunFqBKap473w=" alt="Image 1">
+      </div>
+      <div class="slide-right">
+        <h2>SPECIAL EVEVT</h2>
+        <p>Tonight is not just about food, but about sharing moments of love and laughter. Come, let’s enjoy this dinner together and create beautiful memories</p>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <div class="slide-left">
+        <img src="https://media.istockphoto.com/id/2167817620/photo/an-engineer-in-a-production-facility-makes-entries-in-a-journal.webp?a=1&b=1&s=612x612&w=0&k=20&c=UkO7IU5xKGeofcwq1HN9r2eEyd-G4FD5OJYtXSQEgpk=" alt="Image 2">
+      </div>
+      <div class="slide-right">
+        <h2>SOCISL EVEVT</h2>
+        <p>Join us for an evening of connection, conversations, and celebrations. This social event is all about creating memories and building meaningful bonds</p>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <div class="slide-left">
+        <img src="https://media.istockphoto.com/id/2188358193/photo/family-having-breakfast-in-hotel.webp?a=1&b=1&s=612x612&w=0&k=20&c=j7jszkZB0lu1MXJFG3xSWC183VtO9cLlnp9wpOd-Xno=" alt="Image 3">
+      </div>
+      <div class="slide-right">
+        <h2>CORPORATE EVENT</h2>
+        <p>"We are delighted to invite you to our Corporate Networking Dinner, a night dedicated to building stronger relationships, celebrating achievements, and sharing new opportunities. Join us for an evening of meaningful conversations, fine dining, and a vision for a brighter future."</p>
+      </div>
+    </div>
+  </section>
+
+ </section>
+  <section class="image-section">
+  <img src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Background" class="bg-img">
+  <div class="image-overlay">
+    <span class="tagline">Exquisite Cuisine</span>
+    <h2>A FEAST FOR YOUR SENSES</h2>
+    <div class="divider">_____ x _____</div>
+  </div>
+</section>
+
+
+
+  <section class="reservation-section">
+    <div class="side-image">
+      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBhcnR5fGVufDB8fDB8fHww" alt="Left Side Image">
+    </div>
+    <div class="reservation-content">
+      <span>Reservation</span>
+      <h3>BOOK YOUR TABLE</h3>
+      <form class="reservation-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="date" required>
+        <input type="time" required>
+        <select required>
+          <option value="" disabled selected>Number of People</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+          <option value="5+">5+ People</option>
+        </select>
+        <button type="submit">Reserve Now</button>
+      </form>
+    </div>
+    <div class="side-image">
+      <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Right Side Image">
+    </div>
+  </section>
+  <footer class="modern-footer">
+  <div class="footer-container">
+    <!-- Column 1 -->
+    <div class="footer-column">
+      <h3>Royal Plate</h3>
+      <p>
+        22 Royal Street,<br>
+        Sundance Avenue,<br>
+        New York, USA
+      </p>
+      <p><strong>Phone:</strong> +02 25 854 78521</p>
+      <p><strong>Email:</strong> info@royalplate.com</p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Reservations</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-column">
+      <h4>Newsletter</h4>
+      <form class="newsletter">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Royal Plate. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
